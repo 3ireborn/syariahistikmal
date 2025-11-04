@@ -1,84 +1,140 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Formulir Istikmal Syariah - 3IReborn</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulir Istikmal Syariah - 3iReborn</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f7f6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #1b5e20;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+    form {
+      max-width: 600px;
+      background: white;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    button {
+      width: 100%;
+      background-color: #1b5e20;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #2e7d32;
+    }
+  </style>
 </head>
 <body>
-  <main class="container">
-    <header class="top">
-      <img src="assets/logo.png" alt="Logo Istikmal" class="logo" />
-      <h1>Formulir Istikmal Syariah – 3IReborn</h1>
-      <p class="sub">Isi data singkat. Setelah lanjut, lengkapi data tambahan & kirim ke leader Anda.</p>
-    </header>
+  <header>
+    <h2>Formulir Pendaftaran Istikmal Syariah - 3iReborn</h2>
+    <p>Isi data pribadi dengan lengkap dan benar</p>
+  </header>
 
-    <section class="card">
-      <h2>Halaman 1 — Data Diri</h2>
+  <form id="formPendaftaran">
+    <label>Nama Lengkap</label>
+    <input type="text" id="nama" placeholder="Nama lengkap sesuai KTP" required />
 
-      <label>Nama Lengkap</label>
-      <input id="nama" type="text" placeholder="Nama sesuai KTP" required />
+    <label>Nama Orang Tua Kandung</label>
+    <input type="text" id="namaOrtu" placeholder="Nama ibu atau ayah kandung" required />
 
-      <label>Tempat Lahir</label>
-      <input id="tempat" type="text" placeholder="Contoh: Jakarta" />
+    <label>Alamat Lengkap</label>
+    <textarea id="alamat" rows="3" placeholder="Isi alamat lengkap sesuai KTP" required></textarea>
 
-      <label>Tanggal Lahir</label>
-      <input id="ttl" type="date" />
+    <label>Tempat & Tanggal Lahir</label>
+    <input type="text" id="ttl" placeholder="Contoh: Surabaya, 17 Agustus 1985" required />
 
-      <label>Jenis Kelamin</label>
-      <select id="jk">
-        <option value="">-- Pilih --</option>
-        <option value="Laki-laki">Laki-laki</option>
-        <option value="Perempuan">Perempuan</option>
-      </select>
+    <label>Agama</label>
+    <select id="agama" required>
+      <option value="">-- Pilih Agama --</option>
+      <option>Islam</option>
+      <option>Kristen</option>
+      <option>Katolik</option>
+      <option>Hindu</option>
+      <option>Budha</option>
+      <option>Konghucu</option>
+    </select>
 
-      <label>Alamat (sesuai KTP)</label>
-      <textarea id="alamat" rows="2" placeholder="Jalan, RT/RW, Kelurahan..."></textarea>
+    <label>Jenis Kelamin</label>
+    <select id="jk" required>
+      <option value="">-- Pilih Jenis Kelamin --</option>
+      <option>Laki-laki</option>
+      <option>Perempuan</option>
+    </select>
 
-      <label>Nomor KTP (NIK)</label>
-      <input id="nik" type="text" />
+    <label>Nomor HP / WhatsApp</label>
+    <input type="text" id="hp" placeholder="Contoh: 6281234567890" required />
 
-      <label>Nomor HP</label>
-      <input id="hp" type="tel" placeholder="08xxxxx" />
+    <label>Email</label>
+    <input type="email" id="email" placeholder="contoh@email.com" />
 
-      <label>Email (opsional)</label>
-      <input id="email" type="email" />
+    <label>Nomor Identitas (KTP/SIM)</label>
+    <input type="text" id="ktp" placeholder="Nomor identitas diri" required />
 
-      <label>Pekerjaan / Jabatan</label>
-      <input id="pekerjaan" type="text" />
+    <label>Pekerjaan / Jabatan</label>
+    <input type="text" id="pekerjaan" placeholder="Pekerjaan atau jabatan" />
 
-      <label>Penghasilan per Tahun</label>
-      <select id="penghasilan">
-        <option value="">-- Pilih --</option>
-        <option value="<50"> < 50 juta</option>
-        <option value="50-100">50 - 100 juta</option>
-        <option value="100-500">100 - 500 juta</option>
-        <option value=">500"> > 500 juta</option>
-      </select>
+    <label>Penghasilan per Tahun</label>
+    <input type="text" id="penghasilan" placeholder="Contoh: 60.000.000" />
 
-      <label>Tinggi Badan (cm)</label>
-      <input id="tinggi" type="number" />
+    <label>Kontribusi Premi</label>
+    <select id="premi" required>
+      <option value="">-- Pilih Jumlah Premi --</option>
+      <option>Rp350.000</option>
+      <option>Rp500.000</option>
+      <option>Rp700.000</option>
+      <option>Rp1.000.000</option>
+      <option>Rp2.000.000</option>
+    </select>
 
-      <label>Berat Badan (kg)</label>
-      <input id="berat" type="number" />
+    <button type="submit">Lanjut Halaman 2</button>
+  </form>
 
-      <label>Nama Ibu Kandung</label>
-      <input id="ibu" type="text" required />
+  <script>
+    document.getElementById('formPendaftaran').addEventListener('submit', function(e) {
+      e.preventDefault();
 
-      <label>Jika CT berbeda, tulis hubungan CPP & CT (contoh: Suami/Istri/Anak) </label>
-      <input id="hubungan" type="text" placeholder="Jika sama, tulis 'Sama'" />
+      const nama = document.getElementById('nama').value;
+      const ortu = document.getElementById('namaOrtu').value;
+      const hp = document.getElementById('hp').value;
 
-      <div class="actions">
-        <button id="toPage2" class="btn primary">Lanjut ke Halaman 2 ➜</button>
-      </div>
-    </section>
-
-    <footer class="foot">
-      <p>© 2025 Istikmal Syariah x 3IReborn</p>
-    </footer>
-  </main>
-
-  <script src="script.js"></script>
+      const pesan = `Assalamu’alaikum kak Sugiarto, saya baru daftar Istikmal Syariah via link kakak.%0A%0ANama: ${nama}%0ANama Ortu: ${ortu}%0ANo HP: ${hp}%0A%0AMohon bimbingannya ya 😊`;
+      window.open(`https://wa.me/6285218453131?text=${pesan}`, '_blank');
+    });
+  </script>
 </body>
 </html>
