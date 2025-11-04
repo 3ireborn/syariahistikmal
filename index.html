@@ -128,10 +128,9 @@
     document.getElementById('formPendaftaran').addEventListener('submit', function(e) {
       e.preventDefault();
 
-      // Simpan data sementara di localStorage biar nanti bisa dipakai di halaman 2
       const data = {
         nama: document.getElementById('nama').value,
-        ortu: document.getElementById('namaOrtu').value,
+        namaOrtu: document.getElementById('namaOrtu').value,
         alamat: document.getElementById('alamat').value,
         ttl: document.getElementById('ttl').value,
         agama: document.getElementById('agama').value,
@@ -144,9 +143,10 @@
         premi: document.getElementById('premi').value
       };
 
-      localStorage.setItem('dataPendaftaran', JSON.stringify(data));
+      // Simpan data ke localStorage agar bisa dipakai di halaman2
+      localStorage.setItem('dataPribadi', JSON.stringify(data));
 
-      // pindah ke halaman 2
+      // Lanjut ke halaman 2
       window.location.href = "halaman2.html";
     });
   </script>
