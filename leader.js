@@ -1,0 +1,19 @@
+const leaders = {
+  sugiarto: "6285218453131",
+  agnes: "6285932684440",
+  suwarti: "62881011823140",
+  iyang: "6281388675615",
+  queen: "6282199558169",
+  rahmawan: "6281327498929",
+  regina: "6281285949074",
+  tasya: "966563414575",
+  divawati: "6586210326",
+  tohir: "6281236544821",
+  alpiano: "6282252161911"
+};
+
+function getLeaderNumber() {
+  const params = new URLSearchParams(window.location.search);
+  const leader = params.get("leader");
+  return leaders[leader] || "6285218453131";
+    }
