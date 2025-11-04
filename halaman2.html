@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f4f7f6;
+      background-color: #f8faf8;
       margin: 0;
       padding: 0;
       color: #333;
@@ -61,135 +61,107 @@
 </head>
 <body>
   <header>
-    <h2>Data Ahli Waris - 3iReborn</h2>
-    <p>Lengkapi data ahli waris bisnis dan manfaat</p>
+    <h2>Data Ahli Waris</h2>
+    <p>Lengkapi data di bawah ini dengan benar</p>
   </header>
 
   <form id="formAhliWaris">
-    <h3>Kontribusi Premi</h3>
-    <label>Pilih Besaran Kontribusi Premi</label>
-    <select id="premi" required>
-      <option value="">-- Pilih Jumlah Premi --</option>
-      <option>Rp350.000</option>
-      <option>Rp500.000</option>
-      <option>Rp700.000</option>
-      <option>Rp1.000.000</option>
-      <option>Rp2.000.000</option>
-    </select>
-
     <h3>Ahli Waris Bisnis</h3>
     <label>Nama</label>
-    <input type="text" id="namaBisnis" required />
+    <input type="text" id="warisBisnisNama" required />
 
     <label>Tanggal Lahir</label>
-    <input type="date" id="tglBisnis" required />
+    <input type="date" id="warisBisnisTgl" required />
 
     <label>Jenis Kelamin</label>
-    <select id="jkBisnis" required>
+    <select id="warisBisnisJK" required>
       <option value="">-- Pilih Jenis Kelamin --</option>
       <option>Laki-laki</option>
       <option>Perempuan</option>
     </select>
 
     <label>Hubungan</label>
-    <input type="text" id="hubBisnis" placeholder="Contoh: Anak / Istri / Suami" required />
+    <input type="text" id="warisBisnisHub" placeholder="Contoh: anak / suami / istri" required />
 
     <h3>Ahli Waris Manfaat</h3>
     <label>Nama</label>
-    <input type="text" id="namaManfaat" required />
+    <input type="text" id="warisManfaatNama" required />
 
     <label>Tanggal Lahir</label>
-    <input type="date" id="tglManfaat" required />
+    <input type="date" id="warisManfaatTgl" required />
 
     <label>Jenis Kelamin</label>
-    <select id="jkManfaat" required>
+    <select id="warisManfaatJK" required>
       <option value="">-- Pilih Jenis Kelamin --</option>
       <option>Laki-laki</option>
       <option>Perempuan</option>
     </select>
 
     <label>Hubungan</label>
-    <input type="text" id="hubManfaat" placeholder="Contoh: Anak / Istri / Suami" required />
+    <input type="text" id="warisManfaatHub" placeholder="Contoh: anak / suami / istri" required />
 
-    <button type="submit">Kirim ke WhatsApp</button>
+    <button type="submit">Kirim Data ke Leader</button>
   </form>
 
   <script>
     document.getElementById('formAhliWaris').addEventListener('submit', function(e) {
       e.preventDefault();
 
-      const dataPribadi = JSON.parse(localStorage.getItem('dataPribadi')) || {};
-      const premi = document.getElementById('premi').value;
+      const data1 = JSON.parse(localStorage.getItem('dataMitra'));
 
       const bisnis = {
-        nama: document.getElementById('namaBisnis').value,
-        tgl: document.getElementById('tglBisnis').value,
-        jk: document.getElementById('jkBisnis').value,
-        hubungan: document.getElementById('hubBisnis').value
+        nama: document.getElementById('warisBisnisNama').value,
+        tgl: document.getElementById('warisBisnisTgl').value,
+        jk: document.getElementById('warisBisnisJK').value,
+        hub: document.getElementById('warisBisnisHub').value
       };
 
       const manfaat = {
-        nama: document.getElementById('namaManfaat').value,
-        tgl: document.getElementById('tglManfaat').value,
-        jk: document.getElementById('jkManfaat').value,
-        hubungan: document.getElementById('hubManfaat').value
+        nama: document.getElementById('warisManfaatNama').value,
+        tgl: document.getElementById('warisManfaatTgl').value,
+        jk: document.getElementById('warisManfaatJK').value,
+        hub: document.getElementById('warisManfaatHub').value
       };
 
-      const pesan = `*FORMULIR PENDAFTARAN MITRA BARU 3iREBORN - ISTIKMAL SYARIAH*
+      // Format pesan WhatsApp
+      const pesan = `
+FORMULIR PENDAFTARAN MITRA BARU
 
-*CARA Mendaftar Mitra Baru*
-Produk: *Istikmal Syariah*
+*Data Pribadi:*
+Nama: ${data1.nama}
+Nama Ortu: ${data1.namaOrtu}
+Alamat: ${data1.alamat}
+Tempat & Tgl Lahir: ${data1.ttl}
+Agama: ${data1.agama}
+Jenis Kelamin: ${data1.jk}
+No HP: ${data1.hp}
+Email: ${data1.email}
+No Identitas: ${data1.ktp}
+Pekerjaan/Jabatan: ${data1.pekerjaan}
+Penghasilan/Tahun: ${data1.penghasilan}
+Kontribusi Premi: ${data1.premi}
 
-➡️ Rinciannya:
-*Rp.50.000 untuk ID CARD ONLINE*
-➡️ *Kontribusi Premi yang dipilih:* ${premi}
+*Ahli Waris Bisnis:*
+Nama: ${bisnis.nama}
+Tgl Lahir: ${bisnis.tgl}
+Jenis Kelamin: ${bisnis.jk}
+Hubungan: ${bisnis.hub}
 
-*Kirim Data Pribadi berikut:*
+*Ahli Waris Manfaat:*
+Nama: ${manfaat.nama}
+Tgl Lahir: ${manfaat.tgl}
+Jenis Kelamin: ${manfaat.jk}
+Hubungan: ${manfaat.hub}
 
-Kode ID Sponsor : (kosongkan dulu)
-Kode ID Leader : (kosongkan dulu)
+Terima kasih, mohon bimbingannya 🙏
+`.trim();
 
-■ Nama : ${dataPribadi.nama}
-■ Nama Orang Tua Kandung : ${dataPribadi.namaOrtu}
-■ Alamat : ${dataPribadi.alamat}
-■ Tempat & Tgl Lahir : ${dataPribadi.ttl}
-■ Agama : ${dataPribadi.agama}
-■ Jenis Kelamin : ${dataPribadi.jk}
-■ No HP : ${dataPribadi.hp}
-■ Email : ${dataPribadi.email}
-■ No Identitas : ${dataPribadi.ktp}
-■ Pekerjaan/Jabatan : ${dataPribadi.pekerjaan}
-■ Penghasilan/Tahun : ${dataPribadi.penghasilan}
-■ Kontribusi Premi : ${premi}
+      // Kirim ke WA leader terpilih
+      const nomor = data1.leader;
+      window.open(`https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`, '_blank');
 
-*Ahli Waris Bisnis*
-Nama : ${bisnis.nama}
-Tgl Lahir : ${bisnis.tgl}
-Jenis Kelamin : ${bisnis.jk}
-Hubungan : ${bisnis.hubungan}
-
-*Ahli Waris Manfaat*
-Nama : ${manfaat.nama}
-Tgl Lahir : ${manfaat.tgl}
-Jenis Kelamin : ${manfaat.jk}
-Hubungan : ${manfaat.hubungan}
-
-Info tentang program 3iNetworks:
-https://bit.ly/NabungUntungTerus
-
-Mau ikut seminar online by *ZOOM MEETING GRATIS*
-Tiap hari Senin, Rabu, Jumat jam 19:00 WIB
-Rabu (Minggu 2 dan 4) jam 14:00 WIB
-Di Zoom Meeting:
-https://bit.ly/Zoom3ireborn
-
-Salam
-*NP ACADEMY*
-_KitaNgangguR Punya Penghasilan_
-*Sugiarto Kurniawan*`;
-
-      const url = `https://wa.me/6285218453131?text=${encodeURIComponent(pesan)}`;
-      window.open(url, '_blank');
+      // Hapus data dari storage
+      localStorage.removeItem('dataMitra');
     });
   </script>
 </body>
