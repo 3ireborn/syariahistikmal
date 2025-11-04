@@ -3,169 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formulir Pendaftaran Istikmal Syariah - 3iReborn</title>
+  <title>Formulir Pendaftaran Mitra 3i Reborn - Halaman 1</title>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f8faf8;
+      background-color: #f7fff7;
+      color: #064e3b;
       margin: 0;
       padding: 0;
-      color: #333;
     }
-    header {
-      background-color: #1b5e20;
-      color: white;
-      padding: 1.5rem;
-      text-align: center;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    }
-    form {
-      max-width: 600px;
-      background: white;
-      margin: 2rem auto;
-      padding: 2rem;
+    .container {
+      max-width: 450px;
+      margin: 30px auto;
+      background-color: #ffffff;
+      padding: 25px;
       border-radius: 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #047857;
     }
     label {
-      font-weight: 600;
+      font-weight: 500;
       display: block;
-      margin-bottom: 5px;
+      margin-top: 15px;
+      color: #065f46;
     }
-    input, select, textarea {
+    input, select {
       width: 100%;
       padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
+      margin-top: 5px;
       border-radius: 8px;
-      font-size: 14px;
+      border: 1px solid #a7f3d0;
+      background-color: #ecfdf5;
     }
     button {
+      margin-top: 25px;
       width: 100%;
-      background-color: #1b5e20;
-      color: white;
       padding: 12px;
+      background-color: #047857;
+      color: #fff;
+      font-size: 16px;
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      transition: 0.3s;
+      font-weight: 600;
     }
     button:hover {
-      background-color: #2e7d32;
+      background-color: #065f46;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h2>Formulir Pendaftaran Istikmal Syariah - 3iReborn</h2>
-    <p>Isi data pribadi dengan lengkap dan benar</p>
-  </header>
 
-  <form id="formPendaftaran">
-    <label>Nama Lengkap</label>
-    <input type="text" id="nama" placeholder="Nama lengkap sesuai KTP" required />
+  <div class="container">
+    <h2>Formulir Pendaftaran Mitra 3i Reborn</h2>
 
-    <label>Nama Orang Tua Kandung</label>
-    <input type="text" id="namaOrtu" placeholder="Nama ibu atau ayah kandung" required />
+    <form id="formHalaman1">
+      <label>Nama Lengkap</label>
+      <input type="text" id="namaLengkap" placeholder="Masukkan nama lengkap" required />
 
-    <label>Alamat Lengkap</label>
-    <textarea id="alamat" rows="3" placeholder="Isi alamat lengkap sesuai KTP" required></textarea>
+      <label>Tempat Lahir</label>
+      <input type="text" id="tempatLahir" placeholder="Masukkan tempat lahir" required />
 
-    <label>Tempat & Tanggal Lahir</label>
-    <input type="text" id="ttl" placeholder="Contoh: Surabaya, 17 Agustus 1985" required />
+      <label>Tanggal Lahir</label>
+      <input type="date" id="tanggalLahir" required />
 
-    <label>Agama</label>
-    <select id="agama" required>
-      <option value="">-- Pilih Agama --</option>
-      <option>Islam</option>
-      <option>Kristen</option>
-      <option>Katolik</option>
-      <option>Hindu</option>
-      <option>Budha</option>
-      <option>Konghucu</option>
-    </select>
+      <label>Jenis Kelamin</label>
+      <select id="jenisKelamin" required>
+        <option value="">-- Pilih Jenis Kelamin --</option>
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>
+      </select>
 
-    <label>Jenis Kelamin</label>
-    <select id="jk" required>
-      <option value="">-- Pilih Jenis Kelamin --</option>
-      <option>Laki-laki</option>
-      <option>Perempuan</option>
-    </select>
+      <label>Agama</label>
+      <select id="agama" required>
+        <option value="">-- Pilih Agama --</option>
+        <option value="Islam">Islam</option>
+        <option value="Kristen">Kristen</option>
+        <option value="Katolik">Katolik</option>
+        <option value="Hindu">Hindu</option>
+        <option value="Buddha">Buddha</option>
+        <option value="Konghucu">Konghucu</option>
+      </select>
 
-    <label>Nomor HP / WhatsApp</label>
-    <input type="text" id="hp" placeholder="Contoh: 6281234567890" required />
+      <label>Nama Ibu Kandung</label>
+      <input type="text" id="namaIbu" placeholder="Masukkan nama ibu kandung" required />
 
-    <label>Email</label>
-    <input type="email" id="email" placeholder="contoh@email.com" />
+      <label>No. KTP</label>
+      <input type="text" id="noKtp" placeholder="Masukkan nomor KTP" required />
 
-    <label>Nomor Identitas (KTP/SIM)</label>
-    <input type="text" id="ktp" placeholder="Nomor identitas diri" required />
+      <label>No. Handphone (WhatsApp)</label>
+      <input type="text" id="noHp" placeholder="Masukkan nomor WA aktif" required />
 
-    <label>Pekerjaan / Jabatan</label>
-    <input type="text" id="pekerjaan" placeholder="Pekerjaan atau jabatan" />
+      <label>Alamat Lengkap</label>
+      <input type="text" id="alamat" placeholder="Masukkan alamat lengkap" required />
 
-    <label>Penghasilan per Tahun</label>
-    <input type="text" id="penghasilan" placeholder="Contoh: 60.000.000" />
+      <label>Kontribusi Premi</label>
+      <select id="kontribusi" required>
+        <option value="">-- Pilih Kontribusi Premi --</option>
+        <option value="350000">Rp350.000</option>
+        <option value="500000">Rp500.000</option>
+        <option value="1000000">Rp1.000.000</option>
+        <option value="2000000">Rp2.000.000</option>
+      </select>
 
-    <label>Kontribusi Premi</label>
-    <select id="premi" required>
-      <option value="">-- Pilih Jumlah Premi --</option>
-      <option>Rp350.000</option>
-      <option>Rp500.000</option>
-      <option>Rp700.000</option>
-      <option>Rp1.000.000</option>
-      <option>Rp2.000.000</option>
-    </select>
-
-    <label>Pilih Leader</label>
-    <select id="leader" required>
-      <option value="">-- Pilih Nama Leader --</option>
-      <option value="6285218453131">Sugiarto Kurniawan</option>
-      <option value="6285932684440">Agnes Marsilah</option>
-      <option value="62881011823140">Suwarti</option>
-      <option value="6281388675615">Iyang</option>
-      <option value="6282199558169">Queen</option>
-      <option value="6281327498929">Rahmawan</option>
-      <option value="6281285949074">Regina</option>
-      <option value="966563414575">Tasya</option>
-      <option value="6586210326">Divawati</option>
-      <option value="6281236544821">Tohir</option>
-      <option value="6282252161911">Alpiano</option>
-      <option value="6281236781273">Dina</option>
-    </select>
-
-    <button type="submit">Lanjut ke Halaman 2</button>
-  </form>
+      <button type="submit">Lanjut ke Halaman 2</button>
+    </form>
+  </div>
 
   <script>
-    document.getElementById('formPendaftaran').addEventListener('submit', function(e) {
+    document.getElementById("formHalaman1").addEventListener("submit", function(e){
       e.preventDefault();
 
-      // Simpan data ke localStorage
-      const data = {
-        nama: document.getElementById('nama').value,
-        namaOrtu: document.getElementById('namaOrtu').value,
-        alamat: document.getElementById('alamat').value,
-        ttl: document.getElementById('ttl').value,
-        agama: document.getElementById('agama').value,
-        jk: document.getElementById('jk').value,
-        hp: document.getElementById('hp').value,
-        email: document.getElementById('email').value,
-        ktp: document.getElementById('ktp').value,
-        pekerjaan: document.getElementById('pekerjaan').value,
-        penghasilan: document.getElementById('penghasilan').value,
-        premi: document.getElementById('premi').value,
-        leader: document.getElementById('leader').value
+      const dataMitra = {
+        namaLengkap: document.getElementById("namaLengkap").value,
+        tempatLahir: document.getElementById("tempatLahir").value,
+        tanggalLahir: document.getElementById("tanggalLahir").value,
+        jenisKelamin: document.getElementById("jenisKelamin").value,
+        agama: document.getElementById("agama").value,
+        namaIbu: document.getElementById("namaIbu").value,
+        noKtp: document.getElementById("noKtp").value,
+        noHp: document.getElementById("noHp").value,
+        alamat: document.getElementById("alamat").value,
+        kontribusi: document.getElementById("kontribusi").value
       };
 
-      localStorage.setItem('dataMitra', JSON.stringify(data));
-
+      localStorage.setItem("dataMitra", JSON.stringify(dataMitra));
       window.location.href = "halaman2.html";
     });
   </script>
+
 </body>
 </html>
