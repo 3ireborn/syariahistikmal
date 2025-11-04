@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Formulir Istikmal Syariah - Halaman 2</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="top">
+      <img src="assets/logo.png" alt="Logo Istikmal" class="logo" />
+      <h1>Formulir Istikmal Syariah – 3IReborn</h1>
+      <p class="sub">Lengkapi data tambahan & konfirmasi lalu kirim ke leader Anda.</p>
+    </header>
+
+    <section class="card">
+      <h2>Halaman 2 — Data Tambahan & Kesehatan</h2>
+
+      <label>Nama Bank & Nomor Rekening (opsional)</label>
+      <input id="rekening" type="text" placeholder="BCA - 1234xxxx" />
+
+      <label>NPWP (opsional)</label>
+      <input id="npwp" type="text" />
+
+      <label>Nama Ahli Waris</label>
+      <input id="ahli" type="text" />
+
+      <label>Tanggal Lahir Ahli Waris</label>
+      <input id="ahli_ttl" type="date" />
+
+      <label>Hubungan dengan Ahli Waris</label>
+      <input id="ahli_rel" type="text" />
+
+      <h3>Pertanyaan Kesehatan (Ya/Tidak)</h3>
+
+      <label>Apakah Anda merokok?</label>
+      <select id="rokok">
+        <option value="">-- Pilih --</option>
+        <option value="Tidak">Tidak</option>
+        <option value="Ya">Ya</option>
+      </select>
+
+      <label>Apakah Anda menderita penyakit kronis?</label>
+      <select id="kronis">
+        <option value="">-- Pilih --</option>
+        <option value="Tidak">Tidak</option>
+        <option value="Ya">Ya</option>
+      </select>
+
+      <label>Apakah Anda sering konsumsi alkohol?</label>
+      <select id="alkohol">
+        <option value="">-- Pilih --</option>
+        <option value="Tidak">Tidak</option>
+        <option value="Ya">Ya</option>
+      </select>
+
+      <label>Upload KTP (opsional)</label>
+      <input id="file_ktp" type="file" accept="image/*" />
+
+      <div class="confirm-box">
+        <p>Pastikan data sudah benar. Setelah tekan "Kirim", Anda akan diarahkan ke WhatsApp leader untuk melanjutkan proses closing.</p>
+      </div>
+
+      <div class="actions two">
+        <button id="backTo1" class="btn light">⬅ Kembali</button>
+        <button id="submitAll" class="btn primary">Kirim ke WhatsApp Leader</button>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p>© 2025 Istikmal Syariah x 3IReborn</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
