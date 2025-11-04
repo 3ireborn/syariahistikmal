@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formulir Istikmal Syariah - 3iReborn</title>
+  <title>Formulir Pendaftaran Istikmal Syariah - 3iReborn</title>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f4f7f6;
+      background-color: #f8faf8;
       margin: 0;
       padding: 0;
       color: #333;
@@ -121,6 +121,23 @@
       <option>Rp2.000.000</option>
     </select>
 
+    <label>Pilih Leader</label>
+    <select id="leader" required>
+      <option value="">-- Pilih Nama Leader --</option>
+      <option value="6285218453131">Sugiarto Kurniawan</option>
+      <option value="6285932684440">Agnes Marsilah</option>
+      <option value="62881011823140">Suwarti</option>
+      <option value="6281388675615">Iyang</option>
+      <option value="6282199558169">Queen</option>
+      <option value="6281327498929">Rahmawan</option>
+      <option value="6281285949074">Regina</option>
+      <option value="966563414575">Tasya</option>
+      <option value="6586210326">Divawati</option>
+      <option value="6281236544821">Tohir</option>
+      <option value="6282252161911">Alpiano</option>
+      <option value="6281236781273">Dina</option>
+    </select>
+
     <button type="submit">Lanjut ke Halaman 2</button>
   </form>
 
@@ -128,6 +145,7 @@
     document.getElementById('formPendaftaran').addEventListener('submit', function(e) {
       e.preventDefault();
 
+      // Simpan data ke localStorage
       const data = {
         nama: document.getElementById('nama').value,
         namaOrtu: document.getElementById('namaOrtu').value,
@@ -140,13 +158,12 @@
         ktp: document.getElementById('ktp').value,
         pekerjaan: document.getElementById('pekerjaan').value,
         penghasilan: document.getElementById('penghasilan').value,
-        premi: document.getElementById('premi').value
+        premi: document.getElementById('premi').value,
+        leader: document.getElementById('leader').value
       };
 
-      // Simpan data ke localStorage agar bisa dipakai di halaman2
-      localStorage.setItem('dataPribadi', JSON.stringify(data));
+      localStorage.setItem('dataMitra', JSON.stringify(data));
 
-      // Lanjut ke halaman 2
       window.location.href = "halaman2.html";
     });
   </script>
