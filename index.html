@@ -1,36 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulir Istikmal Syariah - 3iReborn</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="leader.js"></script>
-  <script defer src="script.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Formulir Istikmal Syariah - 3IReborn</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Formulir Istikmal Syariah</h1>
-    <p>Silakan isi data pendaftaran berikut ini 👇</p>
+  <main class="container">
+    <header class="top">
+      <img src="assets/logo.png" alt="Logo Istikmal" class="logo" />
+      <h1>Formulir Istikmal Syariah – 3IReborn</h1>
+      <p class="sub">Isi data singkat. Setelah lanjut, lengkapi data tambahan & kirim ke leader Anda.</p>
+    </header>
 
-    <form id="formIstikmal">
-      <label>Nama Lengkap:</label>
-      <input type="text" id="nama" required>
+    <section class="card">
+      <h2>Halaman 1 — Data Diri</h2>
 
-      <label>No. KTP:</label>
-      <input type="text" id="ktp" required>
+      <label>Nama Lengkap</label>
+      <input id="nama" type="text" placeholder="Nama sesuai KTP" required />
 
-      <label>Tempat, Tanggal Lahir:</label>
-      <input type="text" id="ttl" required>
+      <label>Tempat Lahir</label>
+      <input id="tempat" type="text" placeholder="Contoh: Jakarta" />
 
-      <label>Nama Ibu Kandung:</label>
-      <input type="text" id="ibu" required>
+      <label>Tanggal Lahir</label>
+      <input id="ttl" type="date" />
 
-      <label>No. HP / WhatsApp:</label>
-      <input type="text" id="hp" required>
+      <label>Jenis Kelamin</label>
+      <select id="jk">
+        <option value="">-- Pilih --</option>
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>
+      </select>
 
-      <button type="submit">Kirim Pendaftaran</button>
-    </form>
-  </div>
+      <label>Alamat (sesuai KTP)</label>
+      <textarea id="alamat" rows="2" placeholder="Jalan, RT/RW, Kelurahan..."></textarea>
+
+      <label>Nomor KTP (NIK)</label>
+      <input id="nik" type="text" />
+
+      <label>Nomor HP</label>
+      <input id="hp" type="tel" placeholder="08xxxxx" />
+
+      <label>Email (opsional)</label>
+      <input id="email" type="email" />
+
+      <label>Pekerjaan / Jabatan</label>
+      <input id="pekerjaan" type="text" />
+
+      <label>Penghasilan per Tahun</label>
+      <select id="penghasilan">
+        <option value="">-- Pilih --</option>
+        <option value="<50"> < 50 juta</option>
+        <option value="50-100">50 - 100 juta</option>
+        <option value="100-500">100 - 500 juta</option>
+        <option value=">500"> > 500 juta</option>
+      </select>
+
+      <label>Tinggi Badan (cm)</label>
+      <input id="tinggi" type="number" />
+
+      <label>Berat Badan (kg)</label>
+      <input id="berat" type="number" />
+
+      <label>Nama Ibu Kandung</label>
+      <input id="ibu" type="text" required />
+
+      <label>Jika CT berbeda, tulis hubungan CPP & CT (contoh: Suami/Istri/Anak) </label>
+      <input id="hubungan" type="text" placeholder="Jika sama, tulis 'Sama'" />
+
+      <div class="actions">
+        <button id="toPage2" class="btn primary">Lanjut ke Halaman 2 ➜</button>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p>© 2025 Istikmal Syariah x 3IReborn</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
