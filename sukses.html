@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran Berhasil - Istikmal Syariah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>✅ Pendaftaran Berhasil</h1>
+    <p>Terima kasih sudah mendaftar program <strong>Istikmal Syariah</strong> bersama 3iReborn 🌿</p>
+    <p>Silakan lanjutkan konfirmasi ke WhatsApp Kak Leader di bawah ini 👇</p>
+    <button id="hubungi">Hubungi Leader</button>
+  </div>
+
+  <script>
+    const waPesan = localStorage.getItem("waPesan");
+    const leaderWA = localStorage.getItem("leaderWA");
+    const btn = document.getElementById("hubungi");
+
+    btn.addEventListener("click", () => {
+      window.open(`https://wa.me/${leaderWA}?text=${waPesan}`, "_blank");
+    });
+  </script>
+</body>
+</html>
