@@ -9,11 +9,6 @@ const leaders = {
   tasya: "966563414575",
   divawati: "6586210326",
   tohir: "6281236544821",
-  alpiano: "6282252161911"
+  alpiano: "6282252161911",
+  dina: "6281236781273"
 };
-
-function getLeaderNumber() {
-  const params = new URLSearchParams(window.location.search);
-  const leader = params.get("leader");
-  return leaders[leader] || "6285218453131";
-    }
