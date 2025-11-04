@@ -121,19 +121,33 @@
       <option>Rp2.000.000</option>
     </select>
 
-    <button type="submit"> window.location.href ="halaman2.html";/button>
+    <button type="submit">Lanjut ke Halaman 2</button>
   </form>
 
   <script>
     document.getElementById('formPendaftaran').addEventListener('submit', function(e) {
       e.preventDefault();
 
-      const nama = document.getElementById('nama').value;
-      const ortu = document.getElementById('namaOrtu').value;
-      const hp = document.getElementById('hp').value;
+      // Simpan data sementara di localStorage biar nanti bisa dipakai di halaman 2
+      const data = {
+        nama: document.getElementById('nama').value,
+        ortu: document.getElementById('namaOrtu').value,
+        alamat: document.getElementById('alamat').value,
+        ttl: document.getElementById('ttl').value,
+        agama: document.getElementById('agama').value,
+        jk: document.getElementById('jk').value,
+        hp: document.getElementById('hp').value,
+        email: document.getElementById('email').value,
+        ktp: document.getElementById('ktp').value,
+        pekerjaan: document.getElementById('pekerjaan').value,
+        penghasilan: document.getElementById('penghasilan').value,
+        premi: document.getElementById('premi').value
+      };
 
-      const pesan = `Assalamu’alaikum kak Sugiarto, saya baru daftar Istikmal Syariah via link kakak.%0A%0ANama: ${nama}%0ANama Ortu: ${ortu}%0ANo HP: ${hp}%0A%0AMohon bimbingannya ya 😊`;
-      window.open(`https://wa.me/6285218453131?text=${pesan}`, '_blank');
+      localStorage.setItem('dataPendaftaran', JSON.stringify(data));
+
+      // pindah ke halaman 2
+      window.location.href = "halaman2.html";
     });
   </script>
 </body>
