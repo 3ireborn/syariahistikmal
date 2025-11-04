@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Ahli Waris - Istikmal Syariah</title>
+  <title>Data Ahli Waris - 3iReborn</title>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -61,65 +61,140 @@
 </head>
 <body>
   <header>
-    <h2>Data Ahli Waris - Istikmal Syariah</h2>
-    <p>Lengkapi data berikut dengan benar</p>
+    <h2>Data Ahli Waris - 3iReborn</h2>
+    <p>Isi data ahli waris bisnis dan manfaat</p>
   </header>
 
-  <form id="formWaris">
+  <form id="formAhliWaris">
     <h3>Ahli Waris Bisnis</h3>
     <label>Nama</label>
-    <input type="text" id="namaWarisBisnis" required />
+    <input type="text" id="namaBisnis" required />
+
     <label>Tanggal Lahir</label>
-    <input type="date" id="tglWarisBisnis" required />
+    <input type="date" id="tglBisnis" required />
+
     <label>Jenis Kelamin</label>
-    <select id="jkWarisBisnis" required>
+    <select id="jkBisnis" required>
       <option value="">-- Pilih Jenis Kelamin --</option>
       <option>Laki-laki</option>
       <option>Perempuan</option>
     </select>
+
     <label>Hubungan</label>
-    <input type="text" id="hubWarisBisnis" placeholder="Contoh: anak, istri, suami, orang tua" required />
+    <input type="text" id="hubBisnis" placeholder="Contoh: Anak / Istri / Suami" required />
 
     <h3>Ahli Waris Manfaat</h3>
     <label>Nama</label>
-    <input type="text" id="namaWarisManfaat" required />
+    <input type="text" id="namaManfaat" required />
+
     <label>Tanggal Lahir</label>
-    <input type="date" id="tglWarisManfaat" required />
+    <input type="date" id="tglManfaat" required />
+
     <label>Jenis Kelamin</label>
-    <select id="jkWarisManfaat" required>
+    <select id="jkManfaat" required>
       <option value="">-- Pilih Jenis Kelamin --</option>
       <option>Laki-laki</option>
       <option>Perempuan</option>
     </select>
+
     <label>Hubungan</label>
-    <input type="text" id="hubWarisManfaat" placeholder="Contoh: anak, istri, suami, orang tua" required />
+    <input type="text" id="hubManfaat" placeholder="Contoh: Anak / Istri / Suami" required />
 
     <button type="submit">Kirim ke WhatsApp</button>
   </form>
 
   <script>
-    document.getElementById('formWaris').addEventListener('submit', function(e) {
+    document.getElementById('formAhliWaris').addEventListener('submit', function(e) {
       e.preventDefault();
 
-      const bisnisNama = document.getElementById('namaWarisBisnis').value;
-      const bisnisTgl = document.getElementById('tglWarisBisnis').value;
-      const bisnisJK = document.getElementById('jkWarisBisnis').value;
-      const bisnisHub = document.getElementById('hubWarisBisnis').value;
+      // Ambil data dari halaman 1
+      const dataPribadi = JSON.parse(localStorage.getItem('dataPribadi')) || {};
 
-      const manfaatNama = document.getElementById('namaWarisManfaat').value;
-      const manfaatTgl = document.getElementById('tglWarisManfaat').value;
-      const manfaatJK = document.getElementById('jkWarisManfaat').value;
-      const manfaatHub = document.getElementById('hubWarisManfaat').value;
+      // Ambil data ahli waris
+      const bisnis = {
+        nama: document.getElementById('namaBisnis').value,
+        tgl: document.getElementById('tglBisnis').value,
+        jk: document.getElementById('jkBisnis').value,
+        hubungan: document.getElementById('hubBisnis').value
+      };
 
-      const pesan = 
-      `Assalamu’alaikum kak Sugiarto, saya sudah lengkapi data ahli waris:%0A%0A` +
-      `*Ahli Waris Bisnis*%0A` +
-      `Nama: ${bisnisNama}%0ATgl Lahir: ${bisnisTgl}%0AJenis Kelamin: ${bisnisJK}%0AHubungan: ${bisnisHub}%0A%0A` +
-      `*Ahli Waris Manfaat*%0A` +
-      `Nama: ${manfaatNama}%0ATgl Lahir: ${manfaatTgl}%0AJenis Kelamin: ${manfaatJK}%0AHubungan: ${manfaatHub}%0A%0A` +
-      `Terima kasih, mohon bimbingannya 🙏`;
+      const manfaat = {
+        nama: document.getElementById('namaManfaat').value,
+        tgl: document.getElementById('tglManfaat').value,
+        jk: document.getElementById('jkManfaat').value,
+        hubungan: document.getElementById('hubManfaat').value
+      };
 
-      window.open(`https://wa.me/6285218453131?text=${pesan}`, '_blank');
+      const pesan = `*FORMULIR PENDAFTARAN MITRA BARU 3iREBORN - ISTIKMAL SYARIAH*
+
+*CARA Mendaftar Mitra Baru*
+Bila Tertarik dengan Bisnis Saya
+*1. Produk Istikmal Syariah*
+
+Silahkan transfer ke rekening
+BCA
+7640 727 602
+a.n Sugiarto Kurniawan
+
+Sebesar Disesuaikan dengan Kemampuan 
+
+➡️Rinciannya
+*Rp.50.000 untuk ID CARD ONLINE*
+➡️ *Kontribusi Premi*
+✅Rp.350.000
+✅Rp.500.000
+✅Rp.700.000
+✅Rp.1.000.000
+✅Rp.2.000.000
+( Disesuaikan dengan Kemampuan nya )
+
+*Kirim Data Pribadi berikut:*
+
+Kode ID Sponsor : (kosongkan dulu)
+Kode ID Leader : (kosongkan dulu)
+
+■ Nama : ${dataPribadi.nama}
+■ Nama Orang Tua Kandung : ${dataPribadi.namaOrtu}
+■ Alamat : ${dataPribadi.alamat}
+■ Tempat & Tgl Lahir : ${dataPribadi.ttl}
+■ Agama : ${dataPribadi.agama}
+■ Jenis Kelamin : ${dataPribadi.jk}
+■ No HP : ${dataPribadi.hp}
+■ Email : ${dataPribadi.email}
+■ No Identitas : ${dataPribadi.ktp}
+■ Pekerjaan/Jabatan : ${dataPribadi.pekerjaan}
+■ Penghasilan/Tahun : ${dataPribadi.penghasilan}
+■ Kontribusi Premi : ${dataPribadi.premi}
+
+*Ahli Waris Bisnis*
+Nama : ${bisnis.nama}
+Tgl Lahir : ${bisnis.tgl}
+Jenis Kelamin : ${bisnis.jk}
+Hubungan : ${bisnis.hubungan}
+
+*Ahli Waris Manfaat*
+Nama : ${manfaat.nama}
+Tgl Lahir : ${manfaat.tgl}
+Jenis Kelamin : ${manfaat.jk}
+Hubungan : ${manfaat.hubungan}
+
+Info tentang program 3iNetworks:
+https://bit.ly/NabungUntungTerus
+
+Mau ikut seminar online by *ZOOM MEETING GRATIS*
+Tiap hari Senin, Rabu, Jumat jam 19:00 WIB
+Rabu (Minggu 2 dan 4) jam 14:00 WIB
+Di Zoom Meeting:
+https://bit.ly/Zoom3ireborn
+
+Salam
+*NP ACADEMY*
+_KitaNgangguR Punya Penghasilan_
+*Sugiarto Kurniawan*`;
+
+      // Kirim ke WA
+      const url = `https://wa.me/6285218453131?text=${encodeURIComponent(pesan)}`;
+      window.open(url, '_blank');
     });
   </script>
 </body>
