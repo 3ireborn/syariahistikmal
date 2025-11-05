@@ -1,139 +1,113 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formulir Pendaftaran Mitra 3i Reborn - Halaman 1</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran Online 3iReborn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f7fff7;
-      color: #064e3b;
-      margin: 0;
-      padding: 0;
+      background: linear-gradient(135deg, #005bea, #00c6fb);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
     }
     .container {
-      max-width: 450px;
-      margin: 30px auto;
-      background-color: #ffffff;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: white;
+      border-radius: 16px;
+      padding: 30px 25px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      animation: fadeIn 0.6s ease;
     }
     h2 {
       text-align: center;
-      color: #047857;
+      color: #005bea;
+      font-weight: 700;
+      margin-bottom: 20px;
     }
-    label {
-      font-weight: 500;
-      display: block;
-      margin-top: 15px;
-      color: #065f46;
-    }
+    .form-group { margin-bottom: 15px; }
+    label { font-size: 14px; color: #444; display: block; margin-bottom: 5px; }
     input, select {
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
+      padding: 10px 12px;
       border-radius: 8px;
-      border: 1px solid #a7f3d0;
-      background-color: #ecfdf5;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      transition: 0.3s;
     }
+    input:focus, select:focus { border-color: #005bea; outline: none; }
     button {
-      margin-top: 25px;
       width: 100%;
       padding: 12px;
-      background-color: #047857;
-      color: #fff;
+      background: #005bea;
+      color: white;
+      font-weight: 600;
       font-size: 16px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       cursor: pointer;
-      font-weight: 600;
+      transition: 0.3s;
     }
-    button:hover {
-      background-color: #065f46;
+    button:hover { background: #0045b5; }
+    .footer {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 13px;
+      color: #555;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-
   <div class="container">
-    <h2>Formulir Pendaftaran Mitra 3i Reborn</h2>
-
-    <form id="formHalaman1">
-      <label>Nama Lengkap</label>
-      <input type="text" id="namaLengkap" placeholder="Masukkan nama lengkap" required />
-
-      <label>Tempat Lahir</label>
-      <input type="text" id="tempatLahir" placeholder="Masukkan tempat lahir" required />
-
-      <label>Tanggal Lahir</label>
-      <input type="date" id="tanggalLahir" required />
-
-      <label>Jenis Kelamin</label>
-      <select id="jenisKelamin" required>
-        <option value="">-- Pilih Jenis Kelamin --</option>
-        <option value="Laki-laki">Laki-laki</option>
-        <option value="Perempuan">Perempuan</option>
-      </select>
-
-      <label>Agama</label>
-      <select id="agama" required>
-        <option value="">-- Pilih Agama --</option>
-        <option value="Islam">Islam</option>
-        <option value="Kristen">Kristen</option>
-        <option value="Katolik">Katolik</option>
-        <option value="Hindu">Hindu</option>
-        <option value="Buddha">Buddha</option>
-        <option value="Konghucu">Konghucu</option>
-      </select>
-
-      <label>Nama Ibu Kandung</label>
-      <input type="text" id="namaIbu" placeholder="Masukkan nama ibu kandung" required />
-
-      <label>No. KTP</label>
-      <input type="text" id="noKtp" placeholder="Masukkan nomor KTP" required />
-
-      <label>No. Handphone (WhatsApp)</label>
-      <input type="text" id="noHp" placeholder="Masukkan nomor WA aktif" required />
-
-      <label>Alamat Lengkap</label>
-      <input type="text" id="alamat" placeholder="Masukkan alamat lengkap" required />
-
-      <label>Kontribusi Premi</label>
-      <select id="kontribusi" required>
-        <option value="">-- Pilih Kontribusi Premi --</option>
-        <option value="350000">Rp350.000</option>
-        <option value="500000">Rp500.000</option>
-        <option value="1000000">Rp1.000.000</option>
-        <option value="2000000">Rp2.000.000</option>
-      </select>
-
-      <button type="submit">Lanjut ke Halaman 2</button>
+    <h2>Formulir Pendaftaran 3iReborn</h2>
+    <form id="formPendaftaran">
+      <div class="form-group">
+        <label>Nama Lengkap</label>
+        <input type="text" id="nama" placeholder="Masukkan nama lengkap" required>
+      </div>
+      <div class="form-group">
+        <label>Nomor WhatsApp</label>
+        <input type="tel" id="whatsapp" placeholder="Contoh: 081234567890" required>
+      </div>
+      <div class="form-group">
+        <label>Kota Domisili</label>
+        <input type="text" id="kota" placeholder="Masukkan kota domisili" required>
+      </div>
+      <div class="form-group">
+        <label>Paket Premi</label>
+        <select id="paket" required>
+          <option value="">Pilih paket</option>
+          <option value="350rb">Rp350.000 / bulan</option>
+          <option value="500rb">Rp500.000 / bulan</option>
+          <option value="1jt">Rp1.000.000 / bulan</option>
+          <option value="2jt">Rp2.000.000 / bulan</option>
+        </select>
+      </div>
+      <button type="submit">Kirim Pendaftaran</button>
     </form>
+    <div class="footer">© 3iReborn Official | Replika Leader 2025</div>
   </div>
 
   <script>
-    document.getElementById("formHalaman1").addEventListener("submit", function(e){
+    document.getElementById('formPendaftaran').addEventListener('submit', function(e) {
       e.preventDefault();
-
-      const dataMitra = {
-        namaLengkap: document.getElementById("namaLengkap").value,
-        tempatLahir: document.getElementById("tempatLahir").value,
-        tanggalLahir: document.getElementById("tanggalLahir").value,
-        jenisKelamin: document.getElementById("jenisKelamin").value,
-        agama: document.getElementById("agama").value,
-        namaIbu: document.getElementById("namaIbu").value,
-        noKtp: document.getElementById("noKtp").value,
-        noHp: document.getElementById("noHp").value,
-        alamat: document.getElementById("alamat").value,
-        kontribusi: document.getElementById("kontribusi").value
-      };
-
-      localStorage.setItem("dataMitra", JSON.stringify(dataMitra));
-      window.location.href = "halaman2.html";
+      const nama = document.getElementById('nama').value;
+      const wa = document.getElementById('whatsapp').value;
+      const kota = document.getElementById('kota').value;
+      const paket = document.getElementById('paket').value;
+      const pesan = `Halo Kak, saya ingin daftar 3iReborn%0A%0ANama: ${nama}%0AWhatsApp: ${wa}%0AKota: ${kota}%0APaket: ${paket}`;
+      window.open(`https://wa.me/6285218453131?text=${pesan}`, '_blank');
     });
   </script>
-
 </body>
 </html>
