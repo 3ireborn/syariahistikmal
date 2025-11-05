@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Tambahan - 3iReborn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #43e97b, #38f9d7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      background: #43e97b;
+      border: none;
+      padding: 12px 20px;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    button:hover { background: #38f9d7; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Data Tambahan</h2>
+    <input type="text" placeholder="Nomor HP kamu" required>
+    <input type="email" placeholder="Email kamu" required>
+    <button onclick="location.href='sukses.html'">Kirim</button>
+  </div>
+</body>
+</html>
