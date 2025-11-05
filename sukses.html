@@ -1,27 +1,79 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pendaftaran Berhasil - Istikmal Syariah</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pendaftaran Berhasil - 3iReborn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #0f172a, #1e293b);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #cbd5e1;
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+    .btn {
+      background: #10b981;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: #059669;
+    }
+    .checkmark {
+      font-size: 60px;
+      color: #10b981;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>✅ Pendaftaran Berhasil</h1>
-    <p>Terima kasih sudah mendaftar program <strong>Istikmal Syariah</strong> bersama 3iReborn 🌿</p>
-    <p>Silakan lanjutkan konfirmasi ke WhatsApp Kak Leader di bawah ini 👇</p>
-    <button id="hubungi">Hubungi Leader</button>
+    <div class="checkmark">✅</div>
+    <h1>Pendaftaran Berhasil!</h1>
+    <p>Data kamu sudah terkirim ke Admin 3iReborn.<br>
+    Silakan tunggu konfirmasi dan panduan selanjutnya.</p>
+    
+    <a href="https://chat.whatsapp.com/ https://chat.whatsapp.com/DMlKg7KszEzF2FxyZHEGI0?mode=wwt"target="_blank" class="btn">
+      Gabung ke Grup Training
+    </a>
   </div>
 
   <script>
-    const waPesan = localStorage.getItem("waPesan");
-    const leaderWA = localStorage.getItem("leaderWA");
-    const btn = document.getElementById("hubungi");
-
-    btn.addEventListener("click", () => {
-      window.open(`https://wa.me/${leaderWA}?text=${waPesan}`, "_blank");
-    });
+    // Optional: redirect otomatis ke grup setelah beberapa detik
+    // setTimeout(() => {
+    //   window.location.href = "https://chat.whatsapp.com/xxxxx";
+    // }, 8000);
   </script>
 </body>
 </html>
