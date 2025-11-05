@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konfirmasi Pendaftaran 3iReborn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #25d366, #128C7E);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px 25px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      animation: fadeIn 0.6s ease;
+    }
+
+    h2 {
+      color: #128C7E;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #128C7E;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Data Kamu Sudah Kami Terima ✅</h2>
+    <p>Silakan klik tombol di bawah ini untuk konfirmasi ke Admin melalui WhatsApp agar proses pendaftaran segera diproses.</p>
+    
+    <a id="waButton" class="btn" target="_blank">Kirim ke Admin</a>
+  </div>
+
+  <script>
+    // === GANTI NOMOR ADMIN DI SINI ===
+    const adminPhone = "6285218453131"; // Ganti dengan nomor WhatsApp admin kamu (format internasional tanpa +)
+
+    // Ambil data dari URL (halaman sebelumnya)
+    const params = new URLSearchParams(window.location.search);
+    const nama = params.get("nama");
+    const email = params.get("email");
+    const kota = params.get("kota");
+    const paket = params.get("paket");
+
+    // Buat pesan WhatsApp otomatis
+    const message = `Halo Admin 👋\n\nSaya ingin konfirmasi pendaftaran 3iReborn:\n\nNama: ${nama}\nEmail: ${email}\nKota: ${kota}\nPaket: ${paket}\n\nMohon bantu proses pendaftaran saya ya 🙏`;
+
+    // Pasang link WhatsApp ke tombol
+    const waButton = document.getElementById("waButton");
+    waButton.href = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
+  </script>
+</body>
+</html>
