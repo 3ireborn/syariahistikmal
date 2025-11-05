@@ -1,167 +1,122 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Ahli Waris - 3iReborn</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konfirmasi Pendaftaran - 3iReborn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f8faf8;
-      margin: 0;
-      padding: 0;
+      background: linear-gradient(135deg, #00c6fb, #005bea);
       color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
     }
-    header {
-      background-color: #1b5e20;
-      color: white;
-      padding: 1.5rem;
-      text-align: center;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    }
-    form {
-      max-width: 600px;
+    .container {
       background: white;
-      margin: 2rem auto;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    label {
-      font-weight: 600;
-      display: block;
-      margin-bottom: 5px;
-    }
-    input, select {
+      border-radius: 16px;
+      padding: 30px 25px;
       width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
+      max-width: 420px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      animation: fadeIn 0.6s ease;
+    }
+    h2 {
+      text-align: center;
+      color: #005bea;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    p {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .form-group { margin-bottom: 15px; }
+    label { font-size: 14px; color: #444; display: block; margin-bottom: 5px; }
+    input[type="file"], input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 10px 12px;
       border-radius: 8px;
+      border: 1px solid #ccc;
       font-size: 14px;
     }
     button {
       width: 100%;
-      background-color: #1b5e20;
-      color: white;
       padding: 12px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
+      background: #005bea;
+      color: white;
+      font-weight: 600;
       font-size: 16px;
-      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
       transition: 0.3s;
     }
-    button:hover {
-      background-color: #2e7d32;
+    button:hover { background: #0045b5; }
+    .footer {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 13px;
+      color: #555;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h2>Data Ahli Waris</h2>
-    <p>Lengkapi data di bawah ini dengan benar</p>
-  </header>
+  <div class="container">
+    <h2>Konfirmasi Pendaftaran</h2>
+    <p>Silakan upload bukti transfer dan masukkan detail konfirmasi kamu agar proses aktivasi akun 3iReborn lebih cepat.</p>
 
-  <form id="formAhliWaris">
-    <h3>Ahli Waris Bisnis</h3>
-    <label>Nama</label>
-    <input type="text" id="warisBisnisNama" required />
+    <form id="formKonfirmasi">
+      <div class="form-group">
+        <label>Nama Lengkap</label>
+        <input type="text" id="nama" placeholder="Nama sesuai pendaftaran" required>
+      </div>
+      <div class="form-group">
+        <label>Jumlah Transfer (Rp)</label>
+        <input type="number" id="jumlah" placeholder="Contoh: 350000" required>
+      </div>
+      <div class="form-group">
+        <label>Upload Bukti Transfer</label>
+        <input type="file" id="bukti" accept="image/*" required>
+      </div>
+      <button type="submit">Kirim Konfirmasi</button>
+    </form>
 
-    <label>Tanggal Lahir</label>
-    <input type="date" id="warisBisnisTgl" required />
-
-    <label>Jenis Kelamin</label>
-    <select id="warisBisnisJK" required>
-      <option value="">-- Pilih Jenis Kelamin --</option>
-      <option>Laki-laki</option>
-      <option>Perempuan</option>
-    </select>
-
-    <label>Hubungan</label>
-    <input type="text" id="warisBisnisHub" placeholder="Contoh: anak / suami / istri" required />
-
-    <h3>Ahli Waris Manfaat</h3>
-    <label>Nama</label>
-    <input type="text" id="warisManfaatNama" required />
-
-    <label>Tanggal Lahir</label>
-    <input type="date" id="warisManfaatTgl" required />
-
-    <label>Jenis Kelamin</label>
-    <select id="warisManfaatJK" required>
-      <option value="">-- Pilih Jenis Kelamin --</option>
-      <option>Laki-laki</option>
-      <option>Perempuan</option>
-    </select>
-
-    <label>Hubungan</label>
-    <input type="text" id="warisManfaatHub" placeholder="Contoh: anak / suami / istri" required />
-
-    <button type="submit">Kirim Data ke Leader</button>
-  </form>
+    <div class="footer">© 3iReborn Official | Replika Leader 2025</div>
+  </div>
 
   <script>
-    document.getElementById('formAhliWaris').addEventListener('submit', function(e) {
+    document.getElementById('formKonfirmasi').addEventListener('submit', function(e) {
       e.preventDefault();
+      const nama = document.getElementById('nama').value;
+      const jumlah = document.getElementById('jumlah').value;
+      const fileInput = document.getElementById('bukti');
+      const file = fileInput.files[0];
 
-      const data1 = JSON.parse(localStorage.getItem('dataMitra'));
+      if (!file) {
+        alert("Silakan upload bukti transfer terlebih dahulu!");
+        return;
+      }
 
-      const bisnis = {
-        nama: document.getElementById('warisBisnisNama').value,
-        tgl: document.getElementById('warisBisnisTgl').value,
-        jk: document.getElementById('warisBisnisJK').value,
-        hub: document.getElementById('warisBisnisHub').value
+      const reader = new FileReader();
+      reader.onloadend = function() {
+        const imageBase64 = reader.result.split(',')[1];
+        const pesan = `Konfirmasi Pendaftaran 3iReborn%0A%0ANama: ${nama}%0AJumlah Transfer: Rp${jumlah}%0A(Bukti transfer dalam bentuk gambar)`;
+        const nomorAdmin = '6285218453131'; // Ganti dengan nomor WA leader kamu
+        window.open(`https://wa.me/${nomorAdmin}?text=${pesan}`, '_blank');
       };
-
-      const manfaat = {
-        nama: document.getElementById('warisManfaatNama').value,
-        tgl: document.getElementById('warisManfaatTgl').value,
-        jk: document.getElementById('warisManfaatJK').value,
-        hub: document.getElementById('warisManfaatHub').value
-      };
-
-      // Format pesan WhatsApp
-      const pesan = `
-FORMULIR PENDAFTARAN MITRA BARU
-
-*Data Pribadi:*
-Nama: ${data1.nama}
-Nama Ortu: ${data1.namaOrtu}
-Alamat: ${data1.alamat}
-Tempat & Tgl Lahir: ${data1.ttl}
-Agama: ${data1.agama}
-Jenis Kelamin: ${data1.jk}
-No HP: ${data1.hp}
-Email: ${data1.email}
-No Identitas: ${data1.ktp}
-Pekerjaan/Jabatan: ${data1.pekerjaan}
-Penghasilan/Tahun: ${data1.penghasilan}
-Kontribusi Premi: ${data1.premi}
-
-*Ahli Waris Bisnis:*
-Nama: ${bisnis.nama}
-Tgl Lahir: ${bisnis.tgl}
-Jenis Kelamin: ${bisnis.jk}
-Hubungan: ${bisnis.hub}
-
-*Ahli Waris Manfaat:*
-Nama: ${manfaat.nama}
-Tgl Lahir: ${manfaat.tgl}
-Jenis Kelamin: ${manfaat.jk}
-Hubungan: ${manfaat.hub}
-
-Terima kasih, mohon bimbingannya 🙏
-`.trim();
-
-      // Kirim ke WA leader terpilih
-      const nomor = data1.leader;
-      window.open(`https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`, '_blank');
-
-      // Hapus data dari storage
-      localStorage.removeItem('dataMitra');
+      reader.readAsDataURL(file);
     });
   </script>
 </body>
