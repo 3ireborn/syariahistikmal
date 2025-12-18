@@ -1,94 +1,95 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Konfirmasi Pendaftaran 3iReborn</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>3IReborn | Istikmal Syariah</title>
+  <meta name="description" content="Landing page resmi 3IReborn – Program Unggulan Istikmal Syariah. Solusi keuangan syariah untuk keluarga Indonesia." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background: linear-gradient(135deg, #25d366, #128C7E);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #333;
-    }
-
-    .card {
-      background: #fff;
-      padding: 30px 25px;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-      text-align: center;
-      width: 90%;
-      max-width: 400px;
-      animation: fadeIn 0.6s ease;
-    }
-
-    h2 {
-      color: #128C7E;
-      margin-bottom: 15px;
-    }
-
-    p {
-      margin-bottom: 20px;
-      font-size: 15px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background-color: #128C7E;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    body { font-family: 'Inter', sans-serif; }
   </style>
 </head>
-<body>
-  <div class="card">
-    <h2>Data Kamu Sudah Kami Terima ✅</h2>
-    <p>Silakan klik tombol di bawah ini untuk konfirmasi ke Admin melalui WhatsApp agar proses pendaftaran segera diproses.</p>
-    
-    <a id="waButton" class="btn" target="_blank">Kirim ke Admin</a>
+<body class="bg-slate-50 text-slate-800">
+
+<!-- HERO -->
+<section class="bg-emerald-700 text-white">
+  <div class="max-w-6xl mx-auto px-6 py-20 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">Bangun Keuangan Keluarga<br>dengan Cara yang Halal & Tenang</h1>
+    <p class="text-lg md:text-xl mb-8">Program <b>Istikmal Syariah by 3IReborn</b> membantu keluarga Indonesia menabung, belajar, dan bertumbuh sesuai prinsip syariah.</p>
+    <div class="flex justify-center gap-4 flex-wrap">
+      <a href="#daftar" class="bg-white text-emerald-700 font-semibold px-8 py-3 rounded-xl shadow">Mulai Sekarang</a>
+      <a href="#daftar" class="border border-white px-8 py-3 rounded-xl">Konsultasi Gratis</a>
+    </div>
   </div>
+</section>
 
-  <script>
-    // === GANTI NOMOR ADMIN DI SINI ===
-    const adminPhone = "6285218453131"; // Ganti dengan nomor WhatsApp admin kamu (format internasional tanpa +)
+<!-- MASALAH -->
+<section class="max-w-6xl mx-auto px-6 py-16">
+  <h2 class="text-3xl font-bold text-center mb-10">Masalah yang Sering Terjadi</h2>
+  <div class="grid md:grid-cols-2 gap-6 text-lg">
+    <p>❌ Ingin menabung tapi tidak konsisten</p>
+    <p>❌ Takut riba dan bingung memilih produk</p>
+    <p>❌ Penghasilan ada tapi cepat habis</p>
+    <p>❌ Tidak punya perencanaan keuangan</p>
+  </div>
+</section>
 
-    // Ambil data dari URL (halaman sebelumnya)
-    const params = new URLSearchParams(window.location.search);
-    const nama = params.get("nama");
-    const email = params.get("email");
-    const kota = params.get("kota");
-    const paket = params.get("paket");
+<!-- SOLUSI -->
+<section class="bg-white">
+  <div class="max-w-6xl mx-auto px-6 py-16 text-center">
+    <h2 class="text-3xl font-bold mb-6">Solusi: Istikmal Syariah</h2>
+    <p class="text-lg mb-10">Bukan sekadar menabung, tetapi sistem keuangan syariah terintegrasi.</p>
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="p-6 bg-emerald-50 rounded-xl">✅ Tabungan Syariah Terencana</div>
+      <div class="p-6 bg-emerald-50 rounded-xl">✅ Edukasi Keuangan Islami</div>
+      <div class="p-6 bg-emerald-50 rounded-xl">✅ Proteksi Ta’awun</div>
+      <div class="p-6 bg-emerald-50 rounded-xl">✅ Komunitas & Pendampingan</div>
+    </div>
+  </div>
+</section>
 
-    // Buat pesan WhatsApp otomatis
-    const message = `Halo Admin 👋\n\nSaya ingin konfirmasi pendaftaran 3iReborn:\n\nNama: ${nama}\nEmail: ${email}\nKota: ${kota}\nPaket: ${paket}\n\nMohon bantu proses pendaftaran saya ya 🙏`;
+<!-- PROGRAM -->
+<section class="max-w-6xl mx-auto px-6 py-16">
+  <h2 class="text-3xl font-bold text-center mb-10">Program Unggulan</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="p-6 border rounded-xl">
+      <h3 class="font-bold text-xl mb-3">💰 Tabungan Istikmal</h3>
+      <p>Menabung halal, disiplin, dan terencana untuk masa depan keluarga.</p>
+    </div>
+    <div class="p-6 border rounded-xl">
+      <h3 class="font-bold text-xl mb-3">🛡️ Proteksi Syariah</h3>
+      <p>Perlindungan berbasis tolong-menolong untuk ketenangan keluarga.</p>
+    </div>
+    <div class="p-6 border rounded-xl">
+      <h3 class="font-bold text-xl mb-3">📚 Edukasi & Peluang</h3>
+      <p>Belajar keuangan syariah sekaligus peluang bertumbuh.</p>
+    </div>
+  </div>
+</section>
 
-    // Pasang link WhatsApp ke tombol
-    const waButton = document.getElementById("waButton");
-    waButton.href = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
-  </script>
+<!-- CARA DAFTAR -->
+<section class="bg-emerald-700 text-white" id="daftar">
+  <div class="max-w-6xl mx-auto px-6 py-16 text-center">
+    <h2 class="text-3xl font-bold mb-6">Cara Bergabung</h2>
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      <div>1️⃣ Daftar & isi data</div>
+      <div>2️⃣ Pilih program</div>
+      <div>3️⃣ Mulai belajar & menabung</div>
+    </div>
+    <a href="https://s.id/IstikmalSyariah" class="bg-white text-emerald-700 font-semibold px-10 py-4 rounded-xl shadow">Gabung Sekarang</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-slate-900 text-slate-300">
+  <div class="max-w-6xl mx-auto px-6 py-8 text-center text-sm">
+    © 2025 3IReborn • Program Istikmal Syariah<br>
+    Edukasi Keuangan Syariah untuk Keluarga Indonesia
+  </div>
+</footer>
+
 </body>
-</html>
+  </html>
